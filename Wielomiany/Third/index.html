@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="screen">
+        <div class="content">
+            <div class="startBox">
+                <h1>Twierdzenia wielomianów 3</h1>
+                <a onclick="animateStartButton(); return false;">Zaczynajmy</a>
+                
+            </div>
+
+            <div class="firstTask">
+                <div class="chat">
+                    <div class="input">
+                        <textarea readonly placeholder="Wyślij wiadomość do ChatGPT"></textarea>
+                        <div class="bottom">
+                            <div class="buttons">
+                                <a href="https://en.wikipedia.org/wiki/Office_Assistant" target="_blank"><i class="fas fa-paperclip" style="transform: rotateZ(-135deg) rotateX(180deg)"></i></a>
+                                <a onclick="mystery(); return false;"><i class="fas fa-box-open"></i></a>
+                                <a href="https://www.google.com" target="_blank"><i class="fa-solid fa-globe"></i></a>
+                            </div>
+                            <i class="fa-solid fa-arrow-right" style="transform: rotateZ(-90deg);" id="button" onclick="startAnimation(); return false;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculations" id="s1">
+                    <h1 class="unvisible" name="p1">f(x) = 2x<sup>4</sup> - 3x<sup>3</sup> - 11x<sub>2</sub> + 12x + 18 </h1>
+                    <h1 class="unvisible" name="p1">Krok 1: Twierdzenie o reszcie</h1>
+                    <h2 class="unvisible" name="p1">Na podstawie twierdzenia o reszcie, możliwe pierwiastki wielomianu znajdują się wśród dzielników wyrazu wolnego (18) <br> podzielonych przez dzielniki współczynnika przy najwyższej potędze (2).</h2>
+                    <h2 class="unvisible" name="p1">Dzielniki 18: ±1, ±2, ±3, ±6, ±9, ±18.</h2>
+                    <h1 class="unvisible" name="p1">Dzielniki 2: ±1, ±2.</h1>
+                    <a class="unvisible" id="btn1" name="p1">Dalej >></a>
+                </div>
+
+                <div class="calculations" id="s2">
+                    <h1 class="unvisible" name="p2">Potencjalne pierwiastki to: ±1, ±1/2, ±2, ±3, ±3/2, ±6, ±9, ±18</h1>
+                    <h1 class="unvisible" name="p2">Krok 2: Sprawdzenie pierwiastków </h1>
+                    <h1 class="unvisible" name="p2">Dla x = 3:</h1>
+                    <h2 class="unvisible" name="p2">f(3)= 2(3)<sup>4</sup> - 3(3)<sup>3</sup> - 11(3)<sup>2</sup> + 12(3) + 18</h2>
+                    <h2 class="unvisible" name="p2">f(3) = 2(81) - 3(27) - 11(9) + 36 + 18 = 162 - 81 - 99 + 36 + 18 = 36 - 36 = 0</h1>
+                    <h1 class="unvisible" name="p2">Zatem x = 3 jest miejscem zerowym.</h1>
+                    <a class="unvisible" id="btn2" name="p2">Dalej >></a>
+                </div>
+
+                <div class="calculations" id="s3">
+                    <h1 class="unvisible" name="p3">Krok 3: Dzielenie przez x - 3 </h1>
+                    <h1 class="unvisible" name="p3">Skoro x = 3 jest miejscem zerowym, to dzielimy f(x) przez  x - 3. 
+                    <br>    Użyjemy dzielenia syntetycznego:</h1>
+                    <h1 class="unvisible" name="p3">2x<sup>4</sup> - 3x<sup>3</sup> - 11x<sub>2</sub> + 12x + 18 : (x - 3)</h1>
+                    <h1 class="unvisible" name="p3">Wynik dzielenia: <br>
+                    f(x) = (x - 3)(2x<sup>3</sup> + 3x<sup>2</sup> - 2x - 6)</h1>
+                    <a class="unvisible" id="btn3" name="p3">Dalej >></a>
+                </div>
+
+                <div class="calculations" id="s4">
+                    <h1 class="unvisible" name="p4">Krok 4: Rozkład wielomianu sześciennego </h1>
+                    <h1 class="unvisible" name="p4">Q(x) = (2x<sup>3</sup> + 3x<sup>2</sup> - 2x - 6) </h1>
+                    <h1 class="unvisible" name="p4">Możliwe pierwiastki: ±1, ±2, ±3, ±6, ±1/2, ±3/2</h1>
+                    <h2 class="unvisible" name="p4">Q(-2) = 2(-8) + 3(4) - 2(-2) - 6 = -16 + 12 + 4 - 6 = 0</h2>
+                    <h1 class="unvisible" name="p4">Zatem x = -2 jest pierwiastkiem.</h1>
+                    <a class="unvisible" id="btn4" name="p4">Dalej >></a>
+                </div>
+
+                <div class="calculations" id="s5">
+                    <h1 class="unvisible" name="p5">Krok 5: Dzielenie przez x + 2 oraz delta </h1>
+                    <h1 class="unvisible" name="p5">Dzielimy Q(x) przez x + 2:</h1>
+                    <h1 class="unvisible" name="p5">Q(x)= (x + 2)(2x<sup>2</sup> - x - 3)</h1>
+                    <h1 class="unvisible" name="p5">Rozkład części kwadratowej 2x<sup>2</sup> - x - 3 </h1>
+                    <h1 class="unvisible" name="p5">Δ = b<sup>2</sup> - 4ac = (-1)<sup>2</sup> - 4(2)(-3) = 1 + 24 = 25 <br>
+                    √Δ = 5</h1>
+                    <a class="unvisible" id="btn5" name="p5">Dalej >></a>
+                </div>
+
+                <div class="calculations" id="s6">
+                    <h1 class="unvisible" name="p6">Krok 6: Obliczenie miejsc zerowych i podsumowanie wyników </h1>
+                    <h1 class="unvisible" name="p6">Dla +√Δ: x = 3/2 </h1>
+                    <h1 class="unvisible" name="p6">Dla -√Δ: x = -1</h1>
+                    <h1 class="unvisible" name="p6">Ostateczny rozkład tego wielomianu:  </h1>
+                    <h1 class="unvisible" name="p6">f(x)=(x - 3)(x + 2)(2x - 3)(x + 1) </h1>
+                    <h1 class="unvisible" name="p6">Miejsca zerowe: x<sub>1</sub> = 3, x<sub>2</sub> = -2, x<sub>3</sub> = 3/2, x<sub>4</sub> = -1 </h1>
+                    <a class="unvisible" id="btn6" name="p6">Wróć >></a>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <h1 id="f1" onclick="managePages(2, true); return false;">1</h1>
+            <h1 id="f2" onclick="managePages(3, true); return false;">2</h1>
+            <h1 id="f3" onclick="managePages(4, true); return false;">3</h1>
+            <h1 id="f4" onclick="managePages(5, true); return false;">4</h1>
+            <h1 id="f5" onclick="managePages(6, true); return false;">5</h1>
+            <h1 id="f6" onclick="managePages(1, true); return false;">6</h1>
+            <h1 id="f7"><a href="../Second/index.html"><i class="fa-solid fa-arrow-right"></i></a></h1>
+            <h1 id="f8"><a href="../Main//index.html"><i class="fa-solid fa-arrow-left"></i></a></h1>
+            <div class="animation"></div>
+        </div>
+        <div class="copyright">
+            <h1>Made by: Kacper Kozieł</h1>
+            <h1>Github: <a href="https://github.com/Kacper-Koziel" target="_blank"><i class="fa-brands fa-github"></i></a></h1>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
